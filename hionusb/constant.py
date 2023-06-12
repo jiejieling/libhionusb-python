@@ -9,6 +9,8 @@ class Constant(object):
     RECORD_LY = 2
 
     # 设备事件
+    # USB设备插入/拔出
+    WM_DEVICECHANGE = 0x0219
     # windows 用户自定义事件
     WM_USER = 0x0400
     # 设备连接

@@ -4,9 +4,9 @@ import platform
 import ctypes
 
 CWD = os.path.dirname(__file__)
-DLL = os.path.join(CWD, 'lib/UsbDll.dll')
+DLL = os.path.join(CWD, r'lib\UsbDll.dll')
 
-if sys.platform != 'nt' or platform.architecture()[0] != '32bit':
+if sys.platform != 'win32' or platform.architecture()[0] != '32bit':
     # pyhionusb only used for windows + python 32bit
     raise ImportError("pyhionusb is only used for windows platform and python 32bit arch.")
 
