@@ -58,7 +58,7 @@ start_dial = dll_prototype("StartDial", ctypes.c_int, ctypes.c_int, ctypes.c_cha
 bell = dll_prototype("Bell", ctypes.c_int, ctypes.c_byte)
 
 # 绑定窗口， bind_windows(hwnd)
-bind_windows = dll_prototype("BindWindow", ctypes.c_int, ctypes.c_uint)
+bind_windows = dll_prototype("BindWindow", ctypes.c_int, ctypes.c_void_p)
 
 # 解绑窗口, unbind_windows()
 unbind_windows = dll_prototype("UnBindWindow", ctypes.c_int)
