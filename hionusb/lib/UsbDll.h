@@ -29,58 +29,58 @@
 #endif
 
 /*
-//Éè±¸Á¬½ÓÊ±·¢´ËÏûÏ¢£¨Ö¸USBÏßÓëPCºÍÖÕ¶Ëµç»°¶¼Á¬½ÓºÃ£©.
-//²ÎÊýwParam£º(BYTE)ÐòºÅ;  lParam: 0L.
+//ï¿½è±¸ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ö¸USBï¿½ï¿½ï¿½ï¿½PCï¿½ï¿½ï¿½Õ¶Ëµç»°ï¿½ï¿½ï¿½ï¿½ï¿½ÓºÃ£ï¿½.
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)ï¿½ï¿½ï¿½;  lParam: 0L.
 */
 #define WM_DEVICECONNECT	 WM_USER+701
 
 /*
-//Éè±¸¶Ï¿ªÊ±·¢´ËÏûÏ¢£¨Ö¸USBÏßÓëPC»òÖÕ¶Ëµç»°µÄÈÎÒ»·½¶Ï¿ªÊ±·¢´ËÏûÏ¢£©.
-//²ÎÊýwParam£º(BYTE)0L--È«²¿¶Ï¿ª;  lParam: 0L.
-//                  1L--¶Ï¿ªÒ»Ì¨»°»ú;  lParam: (BYTE)ÐòºÅ
+//ï¿½è±¸ï¿½Ï¿ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ö¸USBï¿½ï¿½ï¿½ï¿½PCï¿½ï¿½ï¿½Õ¶Ëµç»°ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï¿ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½.
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)0L--È«ï¿½ï¿½ï¿½Ï¿ï¿½;  lParam: 0L.
+//                  1L--ï¿½Ï¿ï¿½Ò»Ì¨ï¿½ï¿½ï¿½ï¿½;  lParam: (BYTE)ï¿½ï¿½ï¿½
 */	
 #define WM_DEVICEDISCONNECT		WM_USER+702	
 
 /*
-//ºô½Ð½¨Á¢,¼´Õª»úÊ±·¢ËÍ´ËÏûÏ¢. 
-//²ÎÊýwParam£º(BYTE)ÐòºÅ;  lParam: 0L.
+//ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½,ï¿½ï¿½Õªï¿½ï¿½Ê±ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½Ï¢. 
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)ï¿½ï¿½ï¿½;  lParam: 0L.
 */
 #define WM_OFFHOOK		WM_USER+703		
 
 /*
-//ºô½Ð¶Ï¿ª£¬¼´¹Ò»úÊ±·¢ËÍ´ËÏûÏ¢. 
-//²ÎÊýwParam£º(BYTE)ÐòºÅ;  lParam: 0L--¹Ò»ú£¬1L--ÖÕ¶ËÔÚ±£ÁôµÄ×´Ì¬ÏÂ°´ÃâÌá¼üÍË³öÁË±£Áô.
+//ï¿½ï¿½ï¿½Ð¶Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ê±ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½Ï¢. 
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)ï¿½ï¿½ï¿½;  lParam: 0L--ï¿½Ò»ï¿½ï¿½ï¿½1L--ï¿½Õ¶ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Â°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Ë±ï¿½ï¿½ï¿½.
 */
 #define WM_ONHOOK		WM_USER+704	
 	
 /*
-//À´µçÊ±·¢ËÍÀ´µçºÅÂë.
-//²ÎÊýwParam£º(BYTE)ÐòºÅ;   lParam:char*.
-//ÆÕÍ¨µÄºÅÂë³¤¶È>1£»Èç¹û³¤¶ÈÊÇ1£¬ºÅÂëÊÇ2£¬ÄÇ´ú±í¡°³ö¾Ö¡±£¬ºÅÂëÊÇ1£¬ÄÇ´ú±í¡°±£ÃÜ¡±¡£
+//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)ï¿½ï¿½ï¿½;   lParam:char*.
+//ï¿½ï¿½Í¨ï¿½Äºï¿½ï¿½ë³¤ï¿½ï¿½>1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½ï¿½ï¿½
 */
 #define WM_CALLERID		WM_USER+705		
 
 /*
-//À´µçÏìÁå·¢´ËÏûÏ¢.
-//²ÎÊýwParam£º(BYTE)ÐòºÅ;    lParam: (BYTE)0x01¡ª±íÊ¾Ò»´ÎÁåÉùÏì£»0x00¡ª±íÊ¾´Ë´ÎÁåÉù½áÊø
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å·¢ï¿½ï¿½ï¿½ï¿½Ï¢.
+//ï¿½ï¿½ï¿½ï¿½wParamï¿½ï¿½(BYTE)ï¿½ï¿½ï¿½;    lParam: (BYTE)0x01ï¿½ï¿½ï¿½ï¿½Ê¾Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì£»0x00ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 #define WM_RING		WM_USER+706		
 
 /*
-//Í¨»°¹ý³ÌÖÐ£¬ÊÕµ½±¾¶ËDTMF¼üÖµÊ±£¬·¢´ËÏûÏ¢.
-//²ÎÊýwParam: (BYTE)ÐòºÅ;	lParam: char.
+//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½DTMFï¿½ï¿½ÖµÊ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢.
+//ï¿½ï¿½ï¿½ï¿½wParam: (BYTE)ï¿½ï¿½ï¿½;	lParam: char.
 */
 #define WM_KEY	WM_USER+707
 
 /*
-//ÁôÑÔ¹ý³ÌÖÐ£¬»°»ú½ÓÌýµç»°£¬Í£Ö¹ÁôÑÔ£¬·¢´ËÏûÏ¢.
-//²ÎÊýwParam: (BYTE)ÐòºÅ;	lParam: 0L.
+//ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç»°ï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢.
+//ï¿½ï¿½ï¿½ï¿½wParam: (BYTE)ï¿½ï¿½ï¿½;	lParam: 0L.
 */
 #define WM_STOPLY	WM_USER+708
 
 /*
-//Í¨»°¹ý³ÌÖÐ£¬ÊÕµ½»°»ú°´¡°¾²Òô¡±¼ü
-//²ÎÊýwParam: (BYTE)ÐòºÅ;	lParam: (BYTE)0x01--¾²Òô¿ªÆô£»0x00--¾²Òô¹Ø±Õ.
+//Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½wParam: (BYTE)ï¿½ï¿½ï¿½;	lParam: (BYTE)0x01--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0x00--ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½.
 */
 #define WM_MUTE		WM_USER+709
 
@@ -88,54 +88,54 @@
 
 extern "C" {
 //---------from PC to Phone-------------------------
-// ÈôÎÞËµÃ÷£¬Ôò·µ»Ø 0 ´ú±í³É¹¦
-USBDLL_API int _stdcall InitDll();					//³õÊ¼»¯£¬½öµ÷ÓÃÒ»´Î
+// ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½ 0 ï¿½ï¿½ï¿½ï¿½É¹ï¿½
+USBDLL_API int _stdcall InitDll();					//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 
-USBDLL_API int _stdcall OffHookCtrl(int iDevIdx);					//·¢ËÍÕª»úÃüÁî
+USBDLL_API int _stdcall OffHookCtrl(int iDevIdx);					//ï¿½ï¿½ï¿½ï¿½Õªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall HangUpCtrl(int iDevIdx);					//·¢ËÍ¹Ò»úÃüÁî
+USBDLL_API int _stdcall HangUpCtrl(int iDevIdx);					//ï¿½ï¿½ï¿½Í¹Ò»ï¿½ï¿½ï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall StartDial(int iDevIdx,const char* szDest);	//·¢ËÍ²¦ºÅÃüÁî
+USBDLL_API int _stdcall StartDial(int iDevIdx,const char* szDest);	//ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall Bell(int iDevIdx,BYTE mode);					//ÉèÖÃÕñÁå¿ª»ò¹Ø,mode: 0--¹Ø±Õ; 1--´ò¿ª
+USBDLL_API int _stdcall Bell(int iDevIdx,BYTE mode);					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¿ªï¿½ï¿½ï¿½,mode: 0--ï¿½Ø±ï¿½; 1--ï¿½ï¿½
 
-USBDLL_API int _stdcall SendDTMF(int iDevIdx,const char* szDTMF);	//ÓëStartDial¹¦ÄÜÏàËÆ,¹©¶þ´Î²¦ºÅÓÃ
+USBDLL_API int _stdcall SendDTMF(int iDevIdx,const char* szDTMF);	//ï¿½ï¿½StartDialï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall BindWindow(HWND hwnd);			//°ó¶¨´°¿Ú£¬ËùÓÐÊÂ¼þ·¢ËÍµ½´Ë´°¿Ú£¬³õÊ¼»¯Ê±µ÷ÓÃ£»ÏµÍ³½ÓÊÕÏûÏ¢ WM_DEVICECHANGE ºóµ÷ÓÃ´Ëº¯Êý
+USBDLL_API int _stdcall BindWindow(HWND hwnd);			//ï¿½ó¶¨´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½Ë´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã£ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ WM_DEVICECHANGE ï¿½ï¿½ï¿½ï¿½Ã´Ëºï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall UnBindWindow();					//½â³ý´°¿Ú°ó¶¨, ÔòËùÓÐÊÂ¼þ½«²»»á·¢ËÍµ½´Ë´°¿Ú£¬´°¿ÚÏú»ÙÊ±µ÷ÓÃ´Ëº¯Êý
+USBDLL_API int _stdcall UnBindWindow();					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á·¢ï¿½Íµï¿½ï¿½Ë´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã´Ëºï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall QueryPhoneStatus(int iDevIdx);			//²éÑ¯»°»úÕª¹Ò»ú×´Ì¬ 0->¹Ò»ú,1->Õª»ú
+USBDLL_API int _stdcall QueryPhoneStatus(int iDevIdx);			//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Õªï¿½Ò»ï¿½×´Ì¬ 0->ï¿½Ò»ï¿½,1->Õªï¿½ï¿½
 
-USBDLL_API int _stdcall setLocalRecord(int iDevIdx,BOOL rec);	//±¾µØÂ¼·ÅÒô£¬¿ª pc Ê±£¬ rec: false--¹Ø±Õ;true--´ò¿ª 
+USBDLL_API int _stdcall setLocalRecord(int iDevIdx,BOOL rec);	//ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pc Ê±ï¿½ï¿½ rec: false--ï¿½Ø±ï¿½;true--ï¿½ï¿½ 
 
-USBDLL_API int _stdcall setTalkRecord(int iDevIdx,BOOL rec);		//Í¨»°Â¼Òô£¬rec: false--¹Ø±Õ;true--´ò¿ª 
+USBDLL_API int _stdcall setTalkRecord(int iDevIdx,BOOL rec);		//Í¨ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½rec: false--ï¿½Ø±ï¿½;true--ï¿½ï¿½ 
 
-USBDLL_API int _stdcall setLeaveRecord(int iDevIdx,BOOL rec);		//ÁôÑÔÂ¼Òô£¬rec: false--¹Ø±Õ;true--´ò¿ª 
+USBDLL_API int _stdcall setLeaveRecord(int iDevIdx,BOOL rec);		//ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½rec: false--ï¿½Ø±ï¿½;true--ï¿½ï¿½ 
 
-USBDLL_API int _stdcall GetSerialNo(int iDevIdx, char * number);	//»ñÈ¡ÐòÁÐºÅ
+USBDLL_API int _stdcall GetSerialNo(int iDevIdx, char * number);	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ðºï¿½
 
-USBDLL_API int _stdcall SetSerialNo(int iDevIdx, const char * number);	//ÉèÖÃÐòÁÐºÅ
+USBDLL_API int _stdcall SetSerialNo(int iDevIdx, const char * number);	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½
 
-USBDLL_API int _stdcall Flash(int iDevIdx,UINT ivalue);	//ÉÁ¶ÏÒ»ÏÂ£¬ivalue--Flash²Ù×÷µÄÊ±¼ä³¤¶È,È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®¼ä¡£
+USBDLL_API int _stdcall Flash(int iDevIdx,UINT ivalue);	//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ivalue--Flashï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä³¤ï¿½ï¿½,È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®ï¿½ä¡£
 
-USBDLL_API int _stdcall SetDialTone(int iDevIdx,BYTE mode);				//ÉèÖÃ²¦ºÅÒô¿ª»ò¹Ø,mode: 0--¹Ø±Õ; 1--´ò¿ª
+USBDLL_API int _stdcall SetDialTone(int iDevIdx,BYTE mode);				//ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,mode: 0--ï¿½Ø±ï¿½; 1--ï¿½ï¿½
 
-USBDLL_API int _stdcall SetAutoAnswer(int iDevIdx,BYTE mode);			//ÉèÖÃ×Ô¶¯½ÓÌý¿ª»ò¹Ø,mode: 0--¹Ø±Õ; 1--´ò¿ª
+USBDLL_API int _stdcall SetAutoAnswer(int iDevIdx,BYTE mode);			//ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,mode: 0--ï¿½Ø±ï¿½; 1--ï¿½ï¿½
 
-USBDLL_API int _stdcall SetFlashTime(int iDevIdx,UINT ivalue);			//ÉèÖÃFlashÖµ, ivalue È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®¼ä
+USBDLL_API int _stdcall SetFlashTime(int iDevIdx,UINT ivalue);			//ï¿½ï¿½ï¿½ï¿½FlashÖµ, ivalue È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®ï¿½ï¿½
 
-USBDLL_API int _stdcall SetOutcode(int iDevIdx, const char * code);		//ÉèÖÃ³ö¾ÖÂë£¬×î¶à3Î»
+USBDLL_API int _stdcall SetOutcode(int iDevIdx, const char * code);		//ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½3Î»
 
-USBDLL_API int _stdcall StartRecordFile(int iDevIdx, const char* strFileName, int iType);	//¿ªÊ¼Â¼Òô²Ù×÷, strFileName: Â¼ÒôÎÄ¼þÃû£¬ÍêÕûµÄÂ·¾¶
-																		//Èç:"C:\\record\\sound.wav"¡£iType: Â¼ÒôÀàÐÍ£º0:±¾µØÂ¼Òô£»1:Í¨»°Â¼Òô£»2:ÁôÑÔÂ¼Òô
+USBDLL_API int _stdcall StartRecordFile(int iDevIdx, const char* strFileName);	//ï¿½ï¿½Ê¼Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, strFileName: Â¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+																		//ï¿½ï¿½:"C:\\record\\sound.wav"ï¿½ï¿½iType: Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½0:ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½1:Í¨ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½2:ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½
 
-USBDLL_API int _stdcall StopRecordFile(int iDevIdx);	//Í£Ö¹Â¼Òô
+USBDLL_API int _stdcall StopRecordFile(int iDevIdx);	//Í£Ö¹Â¼ï¿½ï¿½
 
-USBDLL_API int _stdcall ZhuanBo(int iDevIdx,UINT ivalue);	//×ª²¦ÉÁ¶ÏÒ»ÏÂ£¬ivalue--×ª²¦²Ù×÷µÄÊ±¼ä³¤¶È,È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®¼ä¡£
+USBDLL_API int _stdcall ZhuanBo(int iDevIdx,UINT ivalue);	//×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ivalue--×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä³¤ï¿½ï¿½,È¡ÖµÎª0--100ms,1--180ms,2--300ms,3--600ms,4--1000msÖ®ï¿½ä¡£
 
-USBDLL_API int _stdcall Hold(int iDevIdx, BOOL bOn);	//bOn--1:¿ªÆô±£Áô£»0:¹Ø±Õ±£Áô
+USBDLL_API int _stdcall Hold(int iDevIdx, BOOL bOn);	//bOn--1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0:ï¿½Ø±Õ±ï¿½ï¿½ï¿½
 
-USBDLL_API int _stdcall Mute(int iDevIdx, BOOL bOn);	// bOn->1:¿ªÆô±ÕÒô£»0:¹Ø±Õ±ÕÒô£»
+USBDLL_API int _stdcall Mute(int iDevIdx, BOOL bOn);	// bOn->1:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0:ï¿½Ø±Õ±ï¿½ï¿½ï¿½ï¿½ï¿½
 }
 #endif
