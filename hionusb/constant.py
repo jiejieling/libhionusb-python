@@ -8,9 +8,17 @@ class Constant(object):
     RECORD_TALK = 1
     RECORD_LY = 2
 
+    # 设备标识
+    WM_DEVICE = 7
+
     # 设备事件
     # USB设备插入/拔出
     WM_DEVICECHANGE = 0x0219
+    # 设备插入
+    WM_DEVICEADD = 0x8000
+    # 设备拔出
+    WM_DEVICEREMOVE = 0x8004
+
     # windows 用户自定义事件
     WM_USER = 0x0400
     # 设备连接

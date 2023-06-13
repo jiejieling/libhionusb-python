@@ -9,6 +9,7 @@ from setuptools import setup, find_packages
 
 # 第三方依赖
 requires = [
+    'pywin32==305'
 ]
 
 # 自动读取包信息

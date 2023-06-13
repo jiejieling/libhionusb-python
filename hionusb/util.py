@@ -1,4 +1,6 @@
 import ctypes
+import time
+
 import win32con
 import win32gui
 import ctypes.wintypes
@@ -19,8 +21,15 @@ class WinMsgHandler(object):
 
     def __init__(self, handler):
         self.handler = handler
-        self.hwnd = None
-        self.dev_notify_handle = None
+        self._hwnd = None
+        self._dev_notify_handle = None
+        self._stop = False
+
+    def get_win(self):
+        """
+        获取窗口句柄
+        """
+        return self._hwnd
 
     def gen_callback(self):
         def callback(hwnd, msg, wparam, lparam):
@@ -47,7 +56,7 @@ class WinMsgHandler(object):
         win32gui.RegisterClass(wndclass)
 
         # 创建
-        self.hwnd = win32gui.CreateWindowEx(
+        self._hwnd = win32gui.CreateWindowEx(
             win32con.WS_EX_CLIENTEDGE,
             wndclass.lpszClassName,
             "Window Title",
@@ -62,7 +71,7 @@ class WinMsgHandler(object):
             None
         )
 
-        if not self.hwnd:
+        if not self._hwnd:
             return False, f'Create Windows error: {ctypes.windll.kernel32.GetLastError()}'
 
         class GUID(ctypes.Structure):
@@ -95,8 +104,8 @@ class WinMsgHandler(object):
         dev_interface.dbcc_devicetype = win32con.DBT_DEVTYP_DEVICEINTERFACE
         dev_interface.dbcc_classguid = dev_interface_guid
 
-        self.dev_notify_handle = user32.RegisterDeviceNotificationW(
-            ctypes.wintypes.HANDLE(self.hwnd),  # 接收设备更改消息的窗口句柄
+        self._dev_notify_handle = user32.RegisterDeviceNotificationW(
+            ctypes.wintypes.HANDLE(self._hwnd),  # 接收设备更改消息的窗口句柄
             ctypes.byref(dev_interface),  # 设备接口类别
             ctypes.wintypes.DWORD(0x00000000),  # 控制标志
         )
@@ -105,9 +114,21 @@ class WinMsgHandler(object):
         # 进入消息循环
         user32 = ctypes.windll.user32
         msg = ctypes.wintypes.MSG()
-        while user32.GetMessageW(ctypes.byref(msg), None, 0, 0) != 0:
-            user32.TranslateMessage(ctypes.byref(msg))
-            user32.DispatchMessageW(ctypes.byref(msg))
+        while True:
+            if self._stop:
+                break
+
+            if user32.PeekMessageW(ctypes.byref(msg), None, 0, 0, win32con.PM_REMOVE) != 0:
+                user32.TranslateMessage(ctypes.byref(msg))
+                user32.DispatchMessageW(ctypes.byref(msg))
+            else:
+                time.sleep(1)
 
         # 注销设备更改回调函数
-        user32.UnregisterDeviceNotification(self.dev_notify_handle)
+        user32.UnregisterDeviceNotification(self._dev_notify_handle)
+
+    def stop(self):
+        """
+        关闭消息监听
+        """
+        self._stop = True

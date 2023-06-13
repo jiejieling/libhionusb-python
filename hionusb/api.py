@@ -35,9 +35,9 @@ def dll_prototype(method_name, restype, *argtypes):
     def exec_func(*args):
         ret = func(*args)
         if ret < 0:
-            return False
+            return False, ctypes.get_errno()
         else:
-            return True
+            return True, ret
 
     return exec_func
 
@@ -96,8 +96,8 @@ set_flash_time = dll_prototype("SetFlashTime", ctypes.c_int, ctypes.c_int, ctype
 # 设置出局码, set_out_code(idx, code),
 set_out_code = dll_prototype("SetOutcode", ctypes.c_int, ctypes.c_int, ctypes.c_char_p)
 
-# 开始录音, start_record_file(idx, file, type), type: 录音类型：0:本地录音；1:通话录音；2:留言录音
-start_record_file = dll_prototype("StartRecordFile", ctypes.c_int, ctypes.c_int, ctypes.c_char_p, ctypes.c_int)
+# 开始录音, start_record_file(idx, file)
+start_record_file = dll_prototype("StartRecordFile", ctypes.c_int, ctypes.c_int, ctypes.c_char_p)
 
 # 停止录音, stop_record_file(idx)
 stop_record_file = dll_prototype("StopRecordFile", ctypes.c_int, ctypes.c_int)
