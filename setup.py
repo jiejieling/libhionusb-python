@@ -2,10 +2,10 @@
 
 from setuptools import setup, find_packages
 
-# # 导入静态文件
-# file_data = [
-#     ("smart/static", ["smart/static/icon.svg", "smart/static/config.json"]),
-# ]
+# 导入静态文件
+file_data = [
+    ("hionusb/lib/"),
+]
 
 # 第三方依赖
 requires = [
@@ -28,6 +28,6 @@ setup(
     packages=find_packages(),  # 项目需要的包
     install_requires=requires,  # 第三方库依赖
     zip_safe=False,  # 此项需要，否则卸载时报windows error
-    #data_files=file_data,  # 打包时需要打包的数据文件，如图片，配置文件等
-    #include_package_data=True,  # 是否需要导入静态数据文件
+    # data_files=file_data,  # 打包时需要打包的数据文件，如图片，配置文件等
+    include_package_data=True,  # 是否需要导入静态数据文件
 )

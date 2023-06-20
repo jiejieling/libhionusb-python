@@ -1,0 +1,2 @@
+include hionusb/lib/UsbDll.dll
+include hionusb/lib/UsbDll.h
